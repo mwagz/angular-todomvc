@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AngularJS TodoMVC</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  </head>
+  <body ng-app="app">
+    <section ng-controller="ApplicationController as vm">
+      <ul>
+        <li ng-repeat="todo in vm.todos">
+          <input type="checkbox" ng-model="todo.completed" ng-change="vm.completeTodo(todo)" />
+          {{todo.title}}
+        </li>
+      </ul>
+      <input ng-model="vm.newTodo.title" placeholder="Todo" />
+      <input type="submit" value="Add Todo" ng-click="vm.addTodo(todo)" />
+    </section>
+
+    <script src="app/index.js"></script>
+  </body>
+</html>
